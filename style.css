@@ -1,31 +1,26 @@
 :root{
 
-  --page-pad: 16px;
+    --page-pad: 16px;
 
-    /* Typography: fonts */
     --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   
-    /* Typography: sizes */
-    --fs-body: 1rem;     /* 16px */
+    --fs-body: 1rem; 
     --fs-h1: 5.063rem;
-    --fs-h2: 1rem;    /* 23.04px */
-    --fs-h3: 1.5rem;    /* 23.04px */
+    --fs-h2: 1rem; 
+    --fs-h3: 1.5rem;    
 
-  
-    /* Typography: line-height */
     --lh-p: 1.6;
     --lh-h1: 1;
     --lh-h2: 1.2;
     --lh-h3: 1.6;
 
-    /* Colors */
-    --color-primary: #e0d8d1;            /* Primärfarbe */
-    --color-secondary: #F8F6F1;          /* Sekundärfarbe */
-    --color-accent: #A4D7D8;             /* Akzentfarbe */
+    --color-primary: #e0d8d1;
+    --color-secondary: #F8F6F1;
+    --color-accent: #A4D7D8;
 
-    --color-bg: #444343;                 /* Websitebasisfarbe */
-    --color-text: #292828;               /* Textfarbe (Standard auf hell) */
-    --color-text-on-dark: #F8F6F1;       /* Textfarbe auf dunkel */
+    --color-bg: #444343;
+    --color-text: #292828;
+    --color-text-on-dark: #F8F6F1;
 }
 @font-face{
     font-family: "Inter";
@@ -49,8 +44,7 @@
 html{
     scroll-behavior: smooth;
 } 
-
-  
+ 
 body{
     margin: 0;
     background: var(--color-bg);
@@ -88,8 +82,7 @@ h3{
 p{
     hyphens: auto;
     font-size: clamp(15px, 1vw, 16px);
-    line-height: var(--lh-p);
-    
+    line-height: var(--lh-p);   
 }
 
 .deko-titel{
@@ -191,7 +184,7 @@ img.bienenbooklet, img.bienenwebsite{
     display: block;
     width: 100%;
     height: auto;
-    max-width: 430px;
+    max-width: 100%;
 }
   
 .hero-overlay{
@@ -347,7 +340,7 @@ a{
 
 .footer-grid{
     display: grid;
-    grid-template-columns: 1fr auto; /* Kontakt | Button */
+    grid-template-columns: 1fr auto;
     align-items: end;
     gap: 16px;
   }
@@ -402,13 +395,19 @@ a{
   }
 }
 
- /* Tablet Portrait (768–1023px) */
+.header .intro-grid{
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+
 @media (min-width: 768px){
 
     :root{ --page-pad: 32px; 
     }
 
-    /* z.B. 2 Spalten, größere Typo */
+
     .text-center p,
     .carousel-content p,
     .hero-overlay p{
@@ -505,7 +504,6 @@ a{
     height: 100%;
     object-fit: cover;
     display: block;
-    max-width: none;
   }
 
   .deko-titel{
@@ -552,7 +550,7 @@ a{
   }
 
   .footer-grid{
-    grid-template-columns: 1fr 1fr auto; /* Adresse | Kontakt | Button */
+    grid-template-columns: 1fr 1fr auto;
     align-items: end;
     gap: 24px;
   }
@@ -562,7 +560,7 @@ a{
   }
 
   .footer-liste{
-    grid-template-columns: 1fr 1fr; /* Adresse links, Telefon/Mail rechts */
+    grid-template-columns: 1fr 1fr;
     column-gap: 32px;
     row-gap: 12px;
     align-items: start;
@@ -571,7 +569,7 @@ a{
   
 @media (min-width: 1200px){
   
-  :root{ --page-pad: 64px; 
+  :root{ --page-pad: 32px; 
   }
 
   .intro-grid{
@@ -579,7 +577,7 @@ a{
   }
 
   .container{
-    max-width: 960px;
+    max-width: 1100px;
     padding: 0 var(--page-pad);
   }
 
@@ -595,5 +593,17 @@ a{
 
   .footer-liste{
     column-gap: 48px;
+  }
+
+  .header .intro-grid{
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--page-pad);
+    padding-right: var(--page-pad);
+  }
+
+  .hero-img{
+    max-width: 430px;
   }
 }
