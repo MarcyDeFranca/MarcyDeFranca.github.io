@@ -1,4 +1,7 @@
 :root{
+
+  --page-pad: 16px;
+
     /* Typography: fonts */
     --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   
@@ -123,6 +126,10 @@ strong{
     gap: 24px;
   }
 
+.intro-grid{
+    padding: 0 var(--page-pad);
+  }
+
 img {
     display: block;
     max-width: 100%;
@@ -151,8 +158,8 @@ img.bienenbooklet, img.bienenwebsite{
 
 .container{
     margin: 40px auto;
-    padding: 0 16px;
-    max-width: 720px;
+    padding: 0 var(--page-pad);
+    max-width: 960px;
 }
 
 .hey{
@@ -161,7 +168,7 @@ img.bienenbooklet, img.bienenwebsite{
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 23px 0 23px;
+    padding: 0;
 }
 
 .white{
@@ -254,7 +261,7 @@ a{
     margin-top: 0;
 }
 
-.my-slider {
+.my-slider .container {
   position: relative;
 }
 
@@ -275,7 +282,7 @@ a{
 
 .my-slider__btn {
   position: absolute;
-  top: 80%;
+  top: 65%;
   transform: translateY(-50%);
   border: 0;
   background: transparent;
@@ -283,8 +290,8 @@ a{
   cursor: pointer;
 }
 
-.my-slider__btn--prev { left: 16px; }
-.my-slider__btn--next { right: 16px; }
+.my-slider__btn--prev { left: var(--page-pad) }
+.my-slider__btn--next { right: var(--page-pad) }
 
 .nav-icon {
   display: inline-block;
@@ -397,6 +404,10 @@ a{
 
  /* Tablet Portrait (768–1023px) */
 @media (min-width: 768px){
+
+    :root{ --page-pad: 32px; 
+    }
+
     /* z.B. 2 Spalten, größere Typo */
     .text-center p,
     .carousel-content p,
@@ -433,7 +444,7 @@ a{
 
   .container{
     max-width: 900px;
-    padding: 0 32px;
+    padding: 0 var(--page-pad);
   }
 
   .intro-grid{
@@ -444,6 +455,7 @@ a{
       gap: clamp(20px, 3vw, 40px);
       row-gap: 80px;
       align-items: stretch;
+      padding: 0 var(--page-pad);
   }
 
   .hero-wrap,
@@ -489,11 +501,11 @@ a{
   }
     
   .hero-img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      max-width: 400px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    max-width: none;
   }
 
   .deko-titel{
@@ -539,9 +551,6 @@ a{
     margin: auto 0;
   }
 
-  .my-slider__btn--prev { left: 32px; }
-  .my-slider__btn--next { right: 32px; }
-
   .footer-grid{
     grid-template-columns: 1fr 1fr auto; /* Adresse | Kontakt | Button */
     align-items: end;
@@ -561,9 +570,17 @@ a{
 }
   
 @media (min-width: 1200px){
+  
+  :root{ --page-pad: 64px; 
+  }
+
+  .intro-grid{
+    padding: 0 var(--page-pad);
+  }
+
   .container{
     max-width: 960px;
-    padding: 0 64px;
+    padding: 0 var(--page-pad);
   }
 
   .hey{
