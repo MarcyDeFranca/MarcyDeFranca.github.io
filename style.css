@@ -275,7 +275,7 @@ a{
 
 .my-slider__btn {
   position: absolute;
-  top: 65%;
+  top: 80%;
   transform: translateY(-50%);
   border: 0;
   background: transparent;
@@ -607,3 +607,4 @@ a{
     max-width: 430px;
   }
 }
+
