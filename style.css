@@ -629,4 +629,10 @@ img.bienenwebsite{
   gap: 24px;
 }
 
+.footer-grid-rechtliches{
+  grid-template-columns: 1fr ;
+  align-items: end;
+  gap: 24px;
+}
+
 }
